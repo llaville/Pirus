@@ -94,6 +94,14 @@ class Pirus_CLI extends Pirum_CLI
             )
         );
 
+        // arguments for add and remove commands
+        $pearPackageArgument = new Console_CommandLine_Argument(
+            'pearPackage',
+            array(
+                'description' => 'The PEAR package name.'
+            )
+        );
+        
         // all commands
         $buildCmd = $input->addCommand(
             'build',
@@ -114,6 +122,7 @@ class Pirus_CLI extends Pirum_CLI
         $addCmd->addOption($themeOption);
         $addCmd->addOption($templatesDirOption);
         $addCmd->addArgument($targetDirArgument);
+        $addCmd->addArgument($pearPackageArgument);
 
         $removeCmd = $input->addCommand(
             'remove',
@@ -124,6 +133,7 @@ class Pirus_CLI extends Pirum_CLI
         $removeCmd->addOption($themeOption);
         $removeCmd->addOption($templatesDirOption);
         $removeCmd->addArgument($targetDirArgument);
+        $removeCmd->addArgument($pearPackageArgument);
 
         // run the command
         try {
@@ -169,10 +179,18 @@ class Pirus_CLI extends Pirum_CLI
         // select your PEAR channel server root directory
         $targetDir = $result->command->args['targetDir'];
 
+        // select the PEAR package for add and remove commands
+        if (isset($result->command->args['pearPackage'])) {
+            $pearPackage = $result->command->args['pearPackage'];
+        } else {
+            $pearPackage = null;
+        }
+        
         $options = array(
             0 => $templatesDir . DIRECTORY_SEPARATOR . $theme,
             1 => $command,
             2 => $targetDir,
+            3 => $pearPackage,
         );
         $pirum = new self($options);
         $pirum->run();
