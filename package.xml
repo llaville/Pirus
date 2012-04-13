@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Pirus</name>
+ <channel>bartlett.laurent-laville.org</channel>
+ <summary>Pirus is the companion of Pirum to delegate the management of your templates.</summary>
+ <description>Pirus will help you to select a theme for your PEAR Channel server, when you build it. 
+Pirum provides only a basic theme that cannot be customized easily.
+ </description>
+ <lead>
+  <name>Laurent Laville</name>
+  <user>farell</user>
+  <email>pear@laurent-laville.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2012-04-13</date>
+ <time>17:23:25</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+ <notes>
+Additions and changes:
+- initial version
+
+Bug fixes:
+- none
+ </notes>
+ <contents>
+  <dir baseinstalldir="Bartlett" name="/">
+   <dir name="Pirus">
+    <file baseinstalldir="Bartlett" name="CLI.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+     <tasks:replace from="@cfg_dir@" to="cfg_dir" type="pear-config" />
+     <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
+    </file>
+   </dir> <!-- /Pirus -->
+   <dir name="scripts">
+    <file baseinstalldir="" name="pirus" role="script">
+     <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+     <tasks:unixeol />
+    </file>
+    <file baseinstalldir="" name="pirus.bat" role="script">
+     <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+     <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
+     <tasks:windowseol />
+    </file>
+   </dir> <!-- /scripts -->
+   <dir name="templates">
+    <dir name="bartlett">
+     <file baseinstalldir="Bartlett" name="index.html" role="data" />
+     <file baseinstalldir="Bartlett" name="pirum.css" role="data" />
+    </dir> <!-- /templates/bartlett -->
+    <dir name="default">
+     <file baseinstalldir="Bartlett" name="index.html" role="data" />
+     <file baseinstalldir="Bartlett" name="pirum.css" role="data" />
+    </dir> <!-- /templates/default -->
+   </dir> <!-- /templates -->
+   <file baseinstalldir="Bartlett" name="LICENSE" role="doc" />
+   <file baseinstalldir="" name="pirus.ini.dist" role="cfg" />
+   <file baseinstalldir="Bartlett" name="README.markdown" role="doc" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.9.4</min>
+   </pearinstaller>
+   <package>
+    <name>Console_CommandLine</name>
+    <channel>pear.php.net</channel>
+    <min>1.1.3</min>
+   </package>
+   <package>
+    <name>Pirum</name>
+    <channel>pear.pirum-project.org</channel>
+    <min>1.0.5</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease>
+  <installconditions>
+   <os>
+    <name>windows</name>
+   </os>
+  </installconditions>
+  <filelist>
+   <install as="pirus.bat" name="scripts/pirus.bat" />
+   <install as="pirus" name="scripts/pirus" />
+  </filelist>
+ </phprelease>
+ <phprelease>
+  <filelist>
+   <install as="pirus" name="scripts/pirus" />
+   <ignore name="scripts/pirus.bat" />
+  </filelist>
+ </phprelease>
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-04-13</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- initial version
+
+Bug fixes:
+- none
+   </notes>
+  </release>
+ </changelog>
+</package>
