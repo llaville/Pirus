@@ -136,6 +136,36 @@ pre {
 #ft { margin-top: 10px }
 dl { margin-top: 5px }
 dt  { color: #666 }
-dd { margin-left: 2em }
+dd { margin: 0.2em 0 0.2em 2em }
 dd strong { font-weight: bold }
 p { margin-bottom: 5px }
+
+hr { margin: 1.2em 0; }
+
+.badge {
+  float: left;  
+  width: 50px;
+  text-align: center;
+  margin-right: 9px;
+  padding: 1px 9px 2px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #999999;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+.badge-stable {
+  background-color: #468847;
+}
+.badge-beta {
+  background-color: #3A87AD;
+}
+.badge-alpha {
+  background-color: #F89406;
+}
+.badge-snapshot {
+  background-color: #333333;
+}

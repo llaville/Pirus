@@ -34,10 +34,20 @@ pear install <?php echo $this->server->alias ?>/package_name-beta</code></pre>
                 <pre><code><?php echo $this->server->url ?>/feed.xml</code></pre>
 
                 <h2>Packages</h2>
-
-                <?php foreach ($this->packages as $package):
-
-                ?>
+                    <h3>Latest Releases</h3>
+                <?php foreach ($this->packages as $package): ?>
+                    <dl>
+                        <dt><?php echo $package['name']; ?> :</dt><dd>
+                        <?php 
+                        // latest release 
+                        $release = array_shift($package['releases']);
+                        echo "<span class=\"badge badge-{$release['stability']}\">{$release['stability']}</span><a href=\"{$this->server->url}/get/{$package['name']}-{$release['version']}.tgz\">{$release['version']}</a> " . date('F j, Y', strtotime($release['date']));
+                        ?>
+                        </dd>
+                    </dl>
+                <?php endforeach; ?>
+                    <hr />
+                <?php foreach ($this->packages as $package): ?>
                     <h3><?php echo $package['name'] ?><small> - <?php echo $package['summary'] ?></small></h3>
                     <p><?php echo $package['description'] ?></p>
                     <dl>
