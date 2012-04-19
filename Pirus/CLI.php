@@ -254,7 +254,9 @@ class Pirus_CLI extends Pirum_CLI
 
         if (self::$verbose) {
             echo $this->formatter->format("With the theme options:\n", 'COMMENT');
-            echo $this->formatter->formatSection('INFO', sprintf("Using the %s theme.", $themeDir));
+            echo $this->formatter->formatSection(
+                'INFO', sprintf("Using the %s theme.", $themeDir)
+            );
         }
 
         return $ret;
