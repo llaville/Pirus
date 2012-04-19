@@ -3,4 +3,4 @@
 
 require_once 'Bartlett/Pirus/CLI.php';
 
-Pirus_CLI::main();
+exit(Pirus_CLI::main());

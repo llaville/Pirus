@@ -193,7 +193,7 @@ class Pirus_CLI extends Pirum_CLI
             3 => $pearPackage,
         );
         $pirum = new self($options);
-        $pirum->run();
+        return $pirum->run();
     }
 
     /**
@@ -228,7 +228,8 @@ class Pirus_CLI extends Pirum_CLI
             return 1;
         }
 
-        parent::run();
+        $ret = parent::run();
+        return $ret;
     }
 
     /**
