@@ -15,11 +15,11 @@ Pirum provides only a basic theme that cannot be customized easily.
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2012-04-13</date>
- <time>17:23:25</time>
+ <date>2012-04-19</date>
+ <time>12:01:01</time>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.1.0</release>
+  <api>1.1.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -28,10 +28,10 @@ Pirum provides only a basic theme that cannot be customized easily.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- initial version
+- add verbose mode to print theme name and directory used
 
 Bug fixes:
-- none
+- exit status is now returned
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -106,6 +106,25 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>1.1.0</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-04-19</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- add verbose mode to print theme name and directory used
+
+Bug fixes:
+- exit status is now returned
+   </notes>
+  </release>
   <release>
    <version>
     <release>1.0.0</release>
