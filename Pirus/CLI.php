@@ -37,6 +37,12 @@ class Pirus_CLI extends Pirum_CLI
     const VERSION = '@package_version@';
 
     /**
+     * Pirus verbose mode to additionally print messages
+     * @var mixed
+     */
+    static protected $verbose;
+
+    /**
      * Gets current version of Pirus
      *
      * @return string
@@ -63,6 +69,15 @@ class Pirus_CLI extends Pirum_CLI
                 'name'        => 'pirus',
                 'description' => 'Pirus (cli) by Laurent Laville.',
                 'version'     => self::getVersion()
+            )
+        );
+        $input->addOption(
+            'verbose',
+            array(
+                'short_name'  => '-v',
+                'long_name'   => '--verbose',
+                'action'      => 'Counter',
+                'description' => 'Output more verbose information'
             )
         );
 
@@ -101,7 +116,7 @@ class Pirus_CLI extends Pirum_CLI
                 'description' => 'The PEAR package name.'
             )
         );
-        
+
         // all commands
         $buildCmd = $input->addCommand(
             'build',
@@ -135,7 +150,7 @@ class Pirus_CLI extends Pirum_CLI
         $removeCmd->addArgument($targetDirArgument);
         $removeCmd->addArgument($pearPackageArgument);
 
-        // run the command
+        // parse the command
         try {
             $result = $input->parse();
             $command = $result->command_name;
@@ -146,6 +161,12 @@ class Pirus_CLI extends Pirum_CLI
         }
         catch (Exception $e) {
             $input->displayError($e->getMessage());
+        }
+
+        if (isset($result->options['verbose'])) {
+            self::$verbose = $result->options['verbose'];
+        } else {
+            self::$verbose = false;
         }
 
         // select default options about theme
@@ -185,7 +206,8 @@ class Pirus_CLI extends Pirum_CLI
         } else {
             $pearPackage = null;
         }
-        
+
+        // run Pirum
         $options = array(
             0 => $templatesDir . DIRECTORY_SEPARATOR . $theme,
             1 => $command,
@@ -229,6 +251,12 @@ class Pirus_CLI extends Pirum_CLI
         }
 
         $ret = parent::run();
+
+        if (self::$verbose) {
+            echo $this->formatter->format("With the theme options:\n", 'COMMENT');
+            echo $this->formatter->formatSection('INFO', sprintf("Using the %s theme.", $themeDir));
+        }
+
         return $ret;
     }
 
