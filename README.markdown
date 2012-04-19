@@ -19,6 +19,7 @@ pirum --help
       pirus [options] <command> [options] [args]
 
     Options:
+      -v, --verbose  Output more verbose information    
       -h, --help     show this help message and exit
       -v, --version  show the program version and exit
 
