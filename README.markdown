@@ -72,7 +72,7 @@ Requirements
 ------------
 
 - PHP 5.1.0 or better
-- Pirum 1.0.5 or better
+- Pirum 1.0.5 (for PHP 5.2) or Pirum 1.1.4 (for PHP 5.3 / 5.4)
 
 Submitting bugs and feature requests
 ------------------------------------
