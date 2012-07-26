@@ -15,11 +15,11 @@ Pirum provides only a basic theme that cannot be customized easily.
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2012-04-19</date>
- <time>12:01:01</time>
+ <date>2012-07-26</date>
+ <time>09:30:42</time>
  <version>
-  <release>1.1.0</release>
-  <api>1.1.0</api>
+  <release>1.1.1</release>
+  <api>1.1.1</api>
  </version>
  <stability>
   <release>stable</release>
@@ -28,10 +28,10 @@ Pirum provides only a basic theme that cannot be customized easily.
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
  <notes>
 Additions and changes:
-- add verbose mode to print theme name and directory used
+- As Pirum 1.1.4 is not PHP 5.2 compatible, limit installation to version 1.0.5
 
 Bug fixes:
-- exit status is now returned
+- none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -85,6 +85,7 @@ Bug fixes:
     <name>Pirum</name>
     <channel>pear.pirum-project.org</channel>
     <min>1.0.5</min>
+    <max>1.0.5</max>
    </package>
   </required>
  </dependencies>
@@ -106,6 +107,25 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>1.1.1</release>
+    <api>1.1.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-07-26</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <notes>
+Additions and changes:
+- As Pirum 1.1.4 is not PHP 5.2 compatible, limit installation to version 1.0.5
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>1.1.0</release>
