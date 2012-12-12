@@ -1,6 +1,28 @@
 #!@php_bin@
 <?php
+/**
+ * Pirus
+ *
+ * PHP version 5
+ *
+ * @category Pirum
+ * @package  Pirus
+ * @author   Laurent Laville <pear@laurent-laville.org>
+ * @license  http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version  GIT: $Id$
+ * @link     http://php5.laurent-laville.org/pirus/
+ */
 
-require_once 'Bartlett/Pirus/CLI.php';
+$autoloader = 'Pirus/Autoload.php';
+
+if (strpos('@php_bin@', '@') === 0) {
+    // stand-alone version is running
+    $autoloader = dirname(dirname(__FILE__)) . '/' . $autoloader;
+} else {
+    // PEAR installed version is running
+    $autoloader = 'Bartlett/' . $autoloader;
+}
+
+require_once $autoloader;
 
 exit(Pirus_CLI::main());
