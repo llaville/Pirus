@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pirus" default="phar" basedir="."
+    description="Build the phar package version of Pirus">
+
+    <!-- TIP found in ticket#62 (http://www.phing.info/trac/ticket/62) -->
+    <php function="dirname" returnProperty="buildfile.dir">
+        <param value="${phing.file}"/>
+    </php>
+    <resolvePath propertyName="base.dir" file="${buildfile.dir}/.." />
+
+    <property name="default.properties" value="${buildfile.dir}/phar.properties"/>
+    <property file="${default.properties}"/>
+    <property name="output.dir" value="${buildfile.dir}" />
+
+    <target name="phar"
+        if="pirus.version">
+
+        <fileset id="phar.content" dir="${base.dir}">
+            <include name="Pirus/**" />
+            <include name="scripts/pirus" />
+            <include name="templates/default/**" />
+            <include name="vendor/**" />
+        </fileset>
+
+        <mkdir dir="${env.TMP}/pirus" />
+
+        <copy todir="${env.TMP}/pirus">
+            <fileset refid="phar.content" />
+        </copy>
+        
+        <reflexive>
+            <fileset dir="${env.TMP}/pirus">
+                <include name="Pirus/CLI.php" />
+            </fileset>
+            <filterchain>
+                <replacetokens>
+                    <token key="package_version" value="${pirus.version}" />
+                </replacetokens>
+            </filterchain>
+        </reflexive>
+
+        <reflexive>
+            <fileset dir="${env.TMP}/pirus">
+                <include name="vendor/pirum" />
+            </fileset>
+            <filterchain>
+                <replacetokens>
+                    <token key="package_version" value="${pirum.version}" />
+                </replacetokens>
+            </filterchain>
+        </reflexive>
+
+        <php expression="date('Ymd')" returnProperty="builddate" />
+        <pharpackage
+            compression="gzip"
+            destfile="${output.dir}/pirus.phar"
+            stub="${buildfile.dir}/pharStub.php"
+            alias="pirus.phar"
+            basedir="${env.TMP}/pirus">
+            <fileset dir="${env.TMP}/pirus">
+                <include name="**" />
+            </fileset>
+            <metadata>
+                <element name="release_version" value="${pirus.version}" />
+                <element name="release_state" value="${pirus.state}" />
+                <element name="build_date" value="${builddate}" />
+                <element name="authors">
+                    <element name="Laurent Laville">
+                        <element name="e-mail" value="farell@php.net" />
+                    </element>
+                </element>
+                <element name="vendor">
+                    <element name="PEAR">
+                        <element name="Console_CommandLine" value="${Console_CommandLine.version}" />
+                    </element>
+                    <element name="Sensiolabs">
+                        <element name="Pirum" value="${pirum.version}" />
+                    </element>
+                </element>
+            </metadata>
+        </pharpackage>
+
+        <delete dir="${env.TMP}/pirus" />
+
+    </target>
+
+</project>
