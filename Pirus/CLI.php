@@ -12,12 +12,6 @@
  * @link     http://php5.laurent-laville.org/pirus/
  */
 
-require_once 'Console/CommandLine.php';
-require_once 'Console/CommandLine/Option.php';
-require_once 'Console/CommandLine/Argument.php';
-
-require_once 'pirum';
-
 /**
  * Command Line Interface of Pirus
  *
@@ -49,7 +43,7 @@ class Pirus_CLI extends Pirum_CLI
      */
     public static function getVersion()
     {
-        if (strpos(self::VERSION, '@package_version') === 0) {
+        if (strpos(self::VERSION, '@') === 0) {
             $version = 'DEV';
         } else {
             $version = self::VERSION;
@@ -170,18 +164,7 @@ class Pirus_CLI extends Pirum_CLI
         }
 
         // select default options about theme
-        $cfg = '@cfg_dir@/pirus/pirus.ini';
-
-        if (file_exists($cfg)) {
-            $conf = parse_ini_file($cfg, true);
-        } else {
-            $conf = array(
-                'templates' => array(
-                    'dir'   => '@data_dir@/pirus/templates',
-                    'theme' => 'default'
-                )
-            );
-        }
+        $conf = self::getConfiguration();
 
         // select the theme to apply
         if (isset($result->command->options['theme'])) {
@@ -288,6 +271,55 @@ class Pirus_CLI extends Pirum_CLI
         echo $this->formatter->format(
             sprintf("Pirum %s by Fabien Potencier\n", Pirum_CLI::version()), 'INFO'
         );
+    }
+
+    /**
+     * Read configuration from INI file
+     *
+     * @return array
+     * @throws UnexpectedValueException if configuration file contents is invalid
+     */
+    private static function getConfiguration()
+    {
+        if (strpos('@cfg_dir@', '@') === 0) {
+            // stand-alone
+            $cfg      = false;
+            $base_dir = dirname(dirname(__FILE__));
+        } else {
+            // PEAR install
+            $cfg      = '@cfg_dir@/pirus/pirus.ini';
+            $base_dir = '@data_dir@/pirus';
+        }
+
+        if (is_file($cfg)) {
+            $conf = parse_ini_file($cfg, true);
+
+            if (!array_key_exists('templates', $conf)) {
+                throw new UnexpectedValueException(
+                    "'templates' entry does not exist in configuration file '$cfg'"
+                );
+
+            } elseif (!array_key_exists('dir', $conf['templates'])) {
+                throw new UnexpectedValueException(
+                    "'templates.dir' entry does not exist in configuration file '$cfg'"
+                );
+
+            } elseif (!array_key_exists('theme', $conf['templates'])) {
+                throw new UnexpectedValueException(
+                    "'templates.theme' entry does not exist in configuration file '$cfg'"
+                );
+            }
+
+        } else {
+            $conf = array(
+                'templates' => array(
+                    'dir'   => $base_dir . '/templates',
+                    'theme' => 'default'
+                )
+            );
+        }
+
+        return $conf;
     }
 
 }
