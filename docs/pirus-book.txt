@@ -10,7 +10,7 @@ Head to the link:./INSTALL.html[Install Guide] if it's your first run with Pirus
 
 Choose your favorite way between PEAR, GIT, and PHAR.
 
-== What's included
+== What is included
 
 [role="lead"]
 Pirus comes with the default template of Pirum, HTML and CSS code on separate files,
