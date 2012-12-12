@@ -1,0 +1,8 @@
+//:author:      Laurent Laville
+//:email:       pear@laurent-laville.org
+:stylesdir:   styles
+:scriptsdir:  js
+:keywords:    PEAR, channel, package, template
+:mandir:      http://php5.laurent-laville.org/pirus/manual/current
+:footer:      Bugs and feature requests are tracked on https://github.com/llaville/pirus/issues 
+:brand:       Pirus

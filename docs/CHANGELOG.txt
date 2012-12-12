@@ -1,0 +1,40 @@
+= Changelog
+include::attributes.txt[]
+
+
+=== Version 1.2.0 _(2012-12-12)_
+
+.Additions and changes:
+* all required resources used now the default autoloader (Pirus/Autoload.php)
+* provide a phar packages standalone version (embedded a Pirum and Console_CommandLine version)
+* Bartlett theme was removed from default distribution.
+
+.Bug fixes:
+* none
+
+
+=== Version 1.1.1 _(2012-07-26)_
+
+.Additions and changes:
+* As Pirum 1.1.4 is not PHP 5.2 compatible, limit installation to version 1.0.5
+
+.Bug fixes:
+* none
+
+
+=== Version 1.1.0 _(2012-04-19)_
+
+.Additions and changes:
+* add verbose mode to print theme name and directory used
+
+.Bug fixes:
+* exit status is now returned
+
+
+=== Version 1.0.0 _(2012-04-13)_
+
+.Additions and changes:
+* initial version
+
+.Bug fixes:
+* GH-34 : Remove false positive on A::CONST_NAME

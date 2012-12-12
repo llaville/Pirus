@@ -1,0 +1,122 @@
+= User Guide
+include::revision.txt[]
+include::attributes.txt[]
+:description: Overview of the project, its contents, and how to get started with your own template.
+
+== Installation
+
+[role="lead"]
+Head to the link:./INSTALL.html[Install Guide] if it's your first run with Pirus.
+
+Choose your favorite way between PEAR, GIT, and PHAR.
+
+== What's included
+
+[role="lead"]
+Pirus comes with the default template of Pirum, HTML and CSS code on separate files,
+and all its basic features.
+
+`build`::   Build the full content of the target directory.
+`add`::     Add a new package release.
+`remove`::  Remove a single old release.
+
+== Global options
+
+[role="lead"]
+If you always build a PEAR Channel with Pirum and the same skin,
+it is recommended to write your templates directory and the theme name,
+into a INI configuration file.
+
+If you have installed Pirus with PEAR, a template of this INI file `pirus.ini.dist`
+is available on the `@cfg_dir@/Pirus` directory.
+
+[caption="Info", name="info"]
+NOTE: Run the [label label-inverse]#pear config-get cfg_dir# command to know where is located
+your `@cfg_dir@` directory.
+
+Here is the content of default INI configuration file: `@cfg_dir@/Pirus/pirus.ini.dist`
+
+[source,ini]
+----
+[templates]
+dir=/path/to/your/data/Pirus/templates
+theme=default
+----
+
+Make your changes, and save a copy on `@cfg_dir@/Pirus/pirus.ini`.
+
+* `dir` entry is equivalent to Pirus either short option [label]#-d#, or long option [label]#--templatesDir#.
+* `theme` entry is equivalent to Pirus either short option [label]#-t#, or long option [label]#--theme#.
+
+== Local options
+
+[role="lead"]
+If you want temporary to build content of a PEAR Channel server with a different skin
+than your favorite, then use the short or long options of the Pirus command.
+
+====
+[source,diff]
+----
+$ pirus build -t bartlett /pear/channel/root/dir
+----
+====
+Uses the `bartlett` theme to build a pear channel locate on `/pear/channel/root/dir` directory.
+
+====
+[source,diff]
+----
+pirus build --theme pear2 -d /my/pirus/templates  /pear/channel/root/dir
+----
+====
+Uses the `pear2` theme installed in the `/my/pirus/templates` directory,
+and build a pear channel locate on `/pear/channel/root/dir` directory.
+
+== Be more verbose
+
+[role="lead"]
+If you want to print where the theme came from, then use either the
+short option [label]#-v#, or long option [label]#--verbose#.
+
+====
+[source,diff]
+----
+$ pirus --verbose build -t bartlett /pear/channel/root/dir
+----
+====
+Uses the `barlett` theme and print its installation directory `/path/to/pirus/templates/bartlett`.
+
+[source,diff]
+----
+Pirus 1.2.0 by Laurent Laville
+Pirum 1.0.5 by Fabien Potencier
+Running the build command:
+   INFO   Parsing package 1.0.0 for Pirus.
+   INFO   Building channel.
+   INFO   Building maintainers.
+   INFO   Building categories.
+   INFO   Building packages.
+   INFO   Building package Pirus.
+   INFO   Building releases.
+   INFO   Building releases for Pirus.
+   INFO   Building release 1.0.0 for Pirus.
+   INFO   Building index.
+   INFO   Building feed.
+   INFO   Updating PEAR server files.
+   INFO   Command build run successfully.
+With the theme options:
+   INFO   Using the /path/to/pirus/templates/bartlett theme.
+----
+
+== Examples
+
+The PEAR Bartlett channel is the first one to use Pirus.
+
+image:images/bartlett_skin.png[title="Bartlett template"]
+
+http://bartlett.laurent-laville.org/
+
+`bartlett` template is based on the Pirum `default` template.
+
+image:images/default_skin.png[title="Default template"]
+
+http://pear.pirum-project.org/

@@ -19,7 +19,7 @@ pirum --help
       pirus [options] <command> [options] [args]
 
     Options:
-      -v, --verbose  Output more verbose information    
+      -v, --verbose  Output more verbose information
       -h, --help     show this help message and exit
       -v, --version  show the program version and exit
 
@@ -51,19 +51,23 @@ pirum build --help
 Features
 --------
 
-With the same simplicity as Pirum build your PEAR Channel server, Pirus handle the 
+With the same simplicity as Pirum build your PEAR Channel server, Pirus handle the
 index.html and pirum.css files of your project.
 
 * define default templates directory and theme with a simple INI file
-* select the directory where to find your themes with a simple 
+* select the directory where to find your themes with a simple
 * select the theme to skin your web PEAR channel site
 * and of course the same Pirum features
 * included the basic default template of Pirum
 
-Bonus :
+Extra
+-----
+Since release 1.2.0, Pirus is also available as a [phar](http://http://bartlett.laurent-laville.org/get/pirus.phar)
+package version.
 
-With only 12k, Pirus included also the skin used by 
-the [Bartlett PEAR Channel](http://bartlett.laurent-laville.org).
+You can also download the [skin](http://php5.laurent-laville.org/pirus/templates/bartlett.zip) (12k zip archive)
+used by the [Bartlett PEAR Channel](http://bartlett.laurent-laville.org).
+Extract contents (included directory structure) to your Pirus template directory.
 
 About
 =====
@@ -71,8 +75,8 @@ About
 Requirements
 ------------
 
-- PHP 5.1.0 or better
-- Pirum 1.0.5 (for PHP 5.2) or Pirum 1.1.4 (for PHP 5.3 / 5.4)
+- PHP 5.2.1 or better
+- Recommandations: Pirum 1.0.5 (for PHP 5.2), Pirum 1.1.4 (for PHP 5.3 / 5.4)
 
 Submitting bugs and feature requests
 ------------------------------------

@@ -1,0 +1,106 @@
+= Install Guide
+include::revision.txt[]
+include::attributes.txt[]
+:description: Pirus may be installed in several ways, choose your favorite.
+
+
+[role="lead"]
+Pirus is an executable that you'll run from the command line
+to build your PEAR Channel server with your custom skin for the web interface.
+Before you begin, ensure that you have at least
+link:http://www.php.net[PHP] 5.2.1 installed.
+
+== PEAR _recommanded_
+
+First you will need to install two dependencies :
+
+* PEAR http://pear.php.net/package/Console_CommandLine[Console_CommandLine] 1.1.3 minimum
+* http://pear.pirum-project.org/[Pirum] 1.0.5 minimum
+
+[caption="Caution", name="warning"]
+NOTE: *Pirum 1.1.4 is not PHP 5.2 compatible*
+
+[source,diff]
+----
+$ pear channel-discover pear.pirum-project.org
+$ pear install pirum/pirum
+$ pear install console_commandline
+----
+
+Then you can install Pirus itself.
+
+[source,diff]
+----
+$ pear channel-discover bartlett.laurent-laville.org
+$ pear install bartlett/Pirus
+----
+
+You can now execute Pirus simply by running the [label label-inverse]#pirus# command:
+
+[source,diff]
+----
+Pirus (cli) by Laurent Laville.
+
+Usage:
+  pirus [options]
+  pirus [options] <command> [options] [args]
+
+Options:
+  -v, --verbose  Output more verbose information
+  -h, --help     show this help message and exit
+  --version      show the program version and exit
+
+Commands:
+  build   Build the full content of the target directory.
+  add     Add a new release.
+  remove  Remove an old release.
+----
+
+== Git
+
+You can also clone the project.
+
+[source,diff]
+----
+$ git clone git://github.com/llaville/Pirus.git && cd Pirus
+----
+
+Copy the `Pirus` sub-folder in a `Bartlett` directory
+accessible by your `include_path`.
+
+.When [label]#include_path# is equals to [label]#.:/php/includes#
+====
+[source,diff]
+----
+$ mkdir /php/includes/Bartlett && cp Pirus/* /php/includes/Bartlett
+----
+====
+
+[caption="Warning", name="warning"]
+NOTE: Don't forget to install also the two dependencies `Console_CommandLine`
+and `Pirum`. See PEAR method.
+
+Check that Pirus works. Run the local [label label-inverse]#pirus# command.
+[source,diff]
+----
+$ php scripts/pirus -v
+----
+That should give expected result:
+====
+pirus version DEV.
+====
+
+== Phar
+
+[caption="Info", name="info"]
+NOTE: Since version 1.2.0, Pirus provides a Phar package version that didn't required any installation.
+Even for dependencies used.
+
+Simply download the phar archive at http://barlett.laurent-laville.org/get/pirus.phar[]
+
+And follow instruction, as usual, by running the command:
+
+[source,diff]
+----
+$ php pirus.phar
+----
