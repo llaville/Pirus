@@ -48,7 +48,7 @@ pear install <?php echo $this->server->alias ?>/package_name-beta</code></pre>
                 <?php endforeach; ?>
                     <hr />
                 <?php foreach ($this->packages as $package): ?>
-                    <h3><?php echo $package['name'] ?><small> - <?php echo $package['summary'] ?></small></h3>
+                    <h3 id="<?php echo strtolower($package['name']) ?>"><?php echo $package['name'] ?><small> - <?php echo $package['summary'] ?></small></h3>
                     <p><?php echo $package['description'] ?></p>
                     <dl>
                         <dt>License :</dt><dd><?php echo $package['license'] ?></dd>
