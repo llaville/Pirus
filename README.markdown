@@ -21,7 +21,7 @@ pirum --help
     Options:
       -v, --verbose  Output more verbose information
       -h, --help     show this help message and exit
-      -v, --version  show the program version and exit
+      --version      show the program version and exit
 
     Commands:
       build   Build the full content of the target directory.
