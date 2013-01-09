@@ -1,0 +1,8 @@
+Pirus 2.0 is no more, no less, than just Pirum with ability 
+to handle external templates, as much and where ever you want.
+
+Additions and changes:
+- Pirum GH-61: added an HTML id for each package on the main HTML page
+
+Bug fixes:
+- none

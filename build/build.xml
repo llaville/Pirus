@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Pirus" default="help">
+
+    <includepath classpath="${bartlettpackager.dir}/classes" />
+
+    <typedef name="mapping" classname="phing.types.Mapping"  />
+
+    <taskdef name="pirum" classname="phing.tasks.ext.PirumTask" />
+
+    <!--
+        ======================================================================
+        Project base directory
+        ======================================================================
+    -->
+    <resolvepath propertyName="project.dir" file="${phing.dir}/.." />
+
+    <!--
+        ======================================================================
+        Project properties
+        ======================================================================
+    -->
+    <property name="bartlettpackager.dir"        value="${project.dir}/vendor/BartlettPackager" />
+    <property name="build.target"                value="${project.dir}/build" />
+    <property name="build.version"               value="2.0.0" />
+
+    <!--
+        ======================================================================
+        Docs by phpDocumentor
+        ======================================================================
+    -->
+    <property name="docs.phpdoc.target"          value="${project.dir}/docs/html/api" />
+    <property name="docs.phpdoctask"             value="phpdoc2" />
+    <property name="docs.inc-pattern"            value="scripts/pirus" />
+
+    <!--
+        ======================================================================
+        Docs by AsciiDoc
+        ======================================================================
+    -->
+    <property name="docs.asciidoc.target"        value="${project.dir}/docs/html/userguide" />
+    <property name="docs.book-source.name"       value="pirus-book" />
+    <property name="docs.html-books-list"        value="INSTALL,CHANGELOG,LICENSE,getting-started" />
+    <property name="docs.htmlhelpworkshop.home"  value="C:\Program Files\HTML Help Workshop" />
+    <property name="docs.pdf-paper-type"         value="a4" />
+    <property name="docs.build-dist"             value="true" />
+    
+    <fileset id="asciidoc-assets" dir="${project.dir}/docs">
+        <include name="images**" />
+        <include name="js/asciidoc.js" />
+        <include name="styles/pygments.css" />
+        <include name="styles/toc2.css" />
+        <include name="styles/${docs.theme-asciidoc}.css" />
+        <exclude name="**/callouts/**" />
+        <exclude name="styles.css" />
+        <exclude name="**/Thumbs.db" />
+    </fileset>
+    
+    <fileset id="html-books-assets" dir="${docs.asciidoc.target}">
+        <include name="INSTALL.html" />
+        <include name="CHANGELOG.html" />
+        <include name="LICENSE.html" />
+        <include name="getting-started.html" />
+    </fileset>
+
+    <!--
+        ======================================================================
+        Package by PEAR_PackageFileManager2
+        ======================================================================
+    -->
+    <property name="package.properties"          value="${project.dir}/build/package.properties" />
+    <property name="package.summary"             value="${project.dir}/build/package_summary.txt" />
+    <property name="package.description"         value="${project.dir}/build/package_description.txt" />
+    <property name="package.release"             value="${project.dir}/build/${build.version}.txt" />
+    <property name="package.keep-assets"         value="true" />
+    <property name="package.replacements-hook"   value="replacements" />
+
+    <!-- maintainers list -->
+    <mapping name="maintainers" id="package-maintainers-ref">
+        <element>
+            <element key="handle" value="farell"/>
+            <element key="name" value="Laurent Laville"/>
+            <element key="email" value="pear@laurent-laville.org"/>
+            <element key="role" value="lead"/>
+        </element>
+    </mapping>
+
+    <!-- filelist roles exceptions -->
+    <mapping name="exceptions" id="package-exceptions-ref">
+        <element key="LICENSE" value="doc" />
+        <element key="README.markdown" value="doc" />
+        <element key="templates/default/index.html" value="script" />
+        <element key="templates/default/pirum.css" value="script" />
+    </mapping>
+
+    <!-- filelist basedirectory install exceptions -->
+    <mapping name="installexceptions" id="package-installexceptions-ref">
+        <element key="scripts/pirus" value="" />
+        <element key="scripts/pirus.bat" value="" />
+        <element key="templates/default/index.html" value="" />
+        <element key="templates/default/pirum.css" value="" />
+    </mapping>
+
+    <!-- packages dependencies list -->
+    <mapping name="deps" id="package-deps-ref" />
+
+    <!-- extensions dependencies list -->
+    <mapping name="extdeps" id="package-extdeps-ref">
+        <element>
+            <element key="name" value="date" />
+        </element>
+        <element>
+            <element key="name" value="json" />
+        </element>
+        <element>
+            <element key="name" value="pcre" />
+        </element>
+        <element>
+            <element key="name" value="zlib" />
+        </element>
+        <element>
+            <element key="name" value="SPL" />
+        </element>
+        <element>
+            <element key="name" value="SimpleXML" />
+        </element>
+    </mapping>
+
+    <!-- tasks replacements at run-time -->
+    <mapping name="replacements" id="package-rt-replacements-ref">
+        <element>
+            <element key="path" value="scripts/pirus.bat" />
+            <element key="type" value="pear-config" />
+            <element key="from" value="@php_bin@" />
+            <element key="to"   value="php_bin" />
+        </element>
+    </mapping>
+
+    <!-- files replacements at packaging-time -->
+    <patternset id="package-pt-replacements-ref">
+        <include name="scripts/pirus" />
+        <include name="scripts/pirus.bat" />
+    </patternset>
+
+    <!-- End of line files tasks replacements -->
+    <mapping name="eol" id="package-eol-ref">
+        <element>
+            <element key="path" value="scripts/pirus.bat" />
+            <element key="type" value="windows" />
+        </element>
+    </mapping>
+
+    <!-- platform install conditions -->
+    <mapping name="installas" id="package-installas-ref">
+        <element key="windows">
+            <element>
+                <element key="path" value="scripts/pirus.bat" />
+                <element key="as" value="pirus.bat" />
+            </element>
+            <element>
+                <element key="path" value="scripts/pirus" />
+                <element key="as" value="pirus" />
+            </element>
+        </element>
+        <element>
+            <element>
+                <element key="path" value="scripts/pirus.bat" />
+                <element key="ignore" value="true" />
+            </element>
+            <element>
+                <element key="path" value="scripts/pirus" />
+                <element key="as" value="pirus" />
+            </element>
+        </element>
+    </mapping>
+
+    <!-- filelist contents -->
+    <fileset dir="${project.dir}" id="package-contents-ref">
+        <include name="**" />
+
+        <exclude name="templates/bartlett/**" />
+        <exclude name="*.tgz" />
+        <exclude name="**/Thumbs.db" />
+        <exclude name="package.xml" />
+        <exclude name="build/**" />
+        <exclude name="docs/html/**" />
+        <exclude name="docs/images/**" />
+        <exclude name="docs/js/**" />
+        <exclude name="docs/styles/**" />
+        <exclude name="docs/*" />
+    </fileset>
+
+    <!--
+        ======================================================================
+        PEAR Channel Server by Pirum
+        ======================================================================
+    -->
+    <property name="server.basedir"              value="/var/pirum/servers/bartlett" />
+    <property name="server.pirum.force"          value="false" />
+    <property name="server.pirum.quiet"          value="false" />
+
+    <mapping name="server" id="pirum-server-ref">
+        <element key="name" value="bartlett.laurent-laville.org" />
+        <element key="summary" value="Bartlett PEAR Channel" />
+        <element key="alias" value="bartlett" />
+        <element key="url" value="http://bartlett.laurent-laville.org" />
+    </mapping>
+
+    <mapping name="releases" id="pirum-releases-ref">
+        <element key="add" value="${build.target}/Pirus-${build.version}.tgz" />
+    </mapping>
+
+    <!--
+        ======================================================================
+        Imported modules
+        ======================================================================
+    -->
+    <property name="modules.test"                value="false" />
+    <property name="modules.docs"                value="true" />
+    <property name="modules.package"             value="true" />
+    <property name="modules.phar"                value="false" />
+    <property name="modules.server"              value="true" />
+
+    <import file="${bartlettpackager.dir}/modules/build.xml" />
+
+    <!--
+        ======================================================================
+        Actions
+        ======================================================================
+    -->
+    <target name="docs"    depends="docs.do" />
+    <target name="do" />
+    <target name="make-api" />
+    <target name="make-userguide" />
+    <target name="make-userguide-archive" />
+    <target name="make-web" />
+    <target name="copy-assets" />
+
+    <target name="package" depends="package.do" />
+    <target name="make-xml" />
+    <target name="make-tar" />
+
+    <target name="server"  depends="server.do" />
+
+    <target name="help">
+        <echo>A toolchain manager for Pirus (Pirum with UI themes)       </echo>
+        <echo>                                                           </echo>
+        <echo>targets:                                                   </echo>
+        <echo>  docs         Generate API and User documentations        </echo>
+        <echo>  package      Generate the package.xml 2.0 and tarball    </echo>
+        <echo>  server       Build the PEAR Channel Server               </echo>
+    </target>
+
+    <!--
+        ======================================================================
+         (private targets)
+        ======================================================================
+    -->
+    <target hidden="true"
+        name="replacements"
+        description="custom version of package hook replacements"
+    >
+        <echo level="verbose">Processing file: ${assets.pathname}</echo>
+
+        <php function="basename" returnProperty="assets.filename">
+            <param value="${assets.pathname}"/>
+        </php>
+
+        <exec command='git log -1 --format="format:%h %ad %an" --date="iso" -- ${package.repo.basedir}/${assets.pathname}'
+            dir="${package.repo.basedir}"
+            outputProperty="git.latest_commit"
+        />
+
+        <reflexive file="${assets.fullpathname}">
+            <filterchain>
+                <replacetokens begintoken="$" endtoken="$">
+                    <token key="Id" value="$Id: ${assets.filename} ${git.latest_commit} $" />
+                </replacetokens>
+
+                <replacetokens begintoken="@" endtoken="@">
+                    <token key="pirus_version" value="${assets.package_version}" />
+                </replacetokens>
+            </filterchain>
+        </reflexive>
+    </target>
+
+</project>
