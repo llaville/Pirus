@@ -1,13 +1,20 @@
 = Pirus
+:description: The companion of Pirum to handle the themes of your PEAR Channel Server.
+:manhtml:     118Kb
+:manchunked:   80Kb
+:manchm:       77Kb
+:manpdfa4:     91Kb
+:manpdfus:     93Kb
+:manepub:      75Kb
 include::revision.txt[]
 include::attributes.txt[]
-:description: The companion of Pirum to handle the themes of your PEAR Channel server.
+
 
 .{revdate}: Pirus {revnumber} Released
 ************************************************************************
 Release highlights:
 
-- Pirus 1.2.0 support both Pirum 1.0.5 and Pirum 1.1.4, and provide a phar package version.
+- Pirus 2.0.0 come with a new API (and almost forked copy code of Pirum)
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -19,27 +26,13 @@ link:INSTALL.html[Installation page] for downloads and installation instructions
 
 == Introduction
 
-image:images/Pear.png[] [big green]#Pirus# is the best companion of
-link:http://pirum.sensiolabs.org/[Pirum] to handle all themes of your PEAR Channels.
-Follow Pirum updates without losing your site templates.
-
-While Pirum allow only to handle one customization of your `index.html` and `pirum.css` files,
-Pirus extends this limit to infinity. 
-
-=== Features
-
-* Locate your templates by a simple INI configuration file
-* Locate the template to use on command line and do not use the configuration file
-* identify which template was used during your PEAR channel building process
-
-=== Requirements
-
-* PHP 5.2.1 minimum
-* pear/Console_CommandLine 1.1.3 minimum
-* pirum/Pirum 1.0.5 maximum (for a full PHP 5.2 compatibility)
-* pirum/Pirum 1.1.4 minimum (for PHP 5.3 or better)
+include::introduction.txt[]
 
 == Documentation
+
+[role="lead"]
+Head to the Pirus link:pirus-book.html[User Guide] available online
+for information or examples to get started.
 
 The Pirus book is available in a selection of formats.
 You can download the documentation for offline reading.
@@ -47,24 +40,22 @@ You can download the documentation for offline reading.
 [options="header", role="table table-bordered"]
 |===========================
 | Language | Single HTML file | Many HTML files | HTML Help file | PDF A4 file | PDF US file | EPUB file
-| English | link:{mandir}/en/pirus-book.html.zip[pirus-book.html.zip] 517Kb | link:{mandir}/en/pirus-book.chunked.zip[pirus-book.chunked.zip] 464Kb | link:{mandir}/en/pirus-book.chm.zip[pirus-book.chm.zip] 469Kb | link:{mandir}/en/pirus-book-a4.pdf[pirus-book-a4.pdf] 512Kb | link:{mandir}/en/pirus-book-us.pdf[pirus-book-us.pdf] 512Kb | link:{mandir}/en/pirus-book.epub.zip[pirus-book.epub.zip] 446Kb
+| English | link:{mandir}/en/pirus-book.html.zip[pirus-book.html.zip] {manhtml} | link:{mandir}/en/pirus-book.chunked.zip[pirus-book.chunked.zip] {manchunked} | link:{mandir}/en/pirus-book.chm.zip[pirus-book.chm.zip] {manchm} | link:{mandir}/en/pirus-book-a4.pdf[pirus-book-a4.pdf] {manpdfa4} | link:{mandir}/en/pirus-book-us.pdf[pirus-book-us.pdf] {manpdfus} | link:{mandir}/en/pirus-book.epub.zip[pirus-book.epub.zip] {manepub}
 |===========================
 
-[role="lead"]
-Head to the Pirus link:./pirus-book.html[User Guide] available online
-for information or examples to get started.
+== Appendixes
 
-== Appendix A: Changelog
+=== Changelog
 
-link:CHANGELOG.html[History of changes]
+You want to learn more about previous versions. Read the full link:CHANGELOG.html[changelog].
 
-== Appendix B: License
+=== License
 
-Released under the link:LICENSE.html[BSD] license,
-you are free to do whatever you want, even in a commercial environment.
+You are free to do whatever you want, even in a commercial environment.
 You are also encouraged to contribute.
+Read the full link:LICENSE.html[license].
 
-== Appendix C: Credits
+=== Credits
 
 I would like to thanks here a guy without who this add-on won't be born.
 
@@ -73,7 +64,7 @@ ____
 The creator of the Symfony framework.
 ____
 
-== Appendix D: Links
+=== Links
 
 All pages of this site, and user guide were generated with AsciiDoc 8.6.8,
 assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.14
