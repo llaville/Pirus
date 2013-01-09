@@ -1,8 +1,21 @@
 = Changelog
+:description: Summary of versions changes
 include::attributes.txt[]
 
 
-=== Version 1.2.0 _(2012-12-12)_
+== Version 2.0.0 _(2013-01-09)_
+
+Pirus 2.0 is no more, no less, than just Pirum with ability
+to handle external templates, as much and where ever you want.
+
+.Additions and changes:
+* Pirum GH-61: added an HTML id for each package on the main HTML page
+
+.Bug fixes:
+* none
+
+
+== Version 1.2.0 _(2012-12-12)_
 
 .Additions and changes:
 * all required resources used now the default autoloader (Pirus/Autoload.php)
@@ -13,7 +26,7 @@ include::attributes.txt[]
 * none
 
 
-=== Version 1.1.1 _(2012-07-26)_
+== Version 1.1.1 _(2012-07-26)_
 
 .Additions and changes:
 * As Pirum 1.1.4 is not PHP 5.2 compatible, limit installation to version 1.0.5
@@ -22,7 +35,7 @@ include::attributes.txt[]
 * none
 
 
-=== Version 1.1.0 _(2012-04-19)_
+== Version 1.1.0 _(2012-04-19)_
 
 .Additions and changes:
 * add verbose mode to print theme name and directory used
@@ -31,7 +44,7 @@ include::attributes.txt[]
 * exit status is now returned
 
 
-=== Version 1.0.0 _(2012-04-13)_
+== Version 1.0.0 _(2012-04-13)_
 
 .Additions and changes:
 * initial version

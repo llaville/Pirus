@@ -1,0 +1,170 @@
+= Getting Started
+:description: How to get started with your first template
+include::revision.txt[]
+include::attributes.txt[]
+
+
+[role="lead"]
+This simple tutorial will demonstrate how to manage your pirum server with your own template.
+
+
+== What is included
+
+[role="lead"]
+Pirus comes with the same features as Pirum, which is almost the same code.
+Pirus add ability to handle your own templates easily, with a sample configuration file.
+
+This configuration file is named `pirum.ini` (for windows users), and `.pirumrc` (for linux users).
+
+Don't be confused, between the two names Pirum and Pirus.
+Pirus 2.0 is only the behavior missing to Pirum 1.x
+
+It's the same interface, commands, as Pirum. After all it's not a surprise,
+because Pirus 2 is a forked code of Pirum 1.1.5-dev
+
+
+== Structure of Configuration File
+
+[role="lead"]
+To handle multiple server and different graphical theme, it's a pain and a maelstrom to do it with Pirum.
+You have to switch from a copy of your `templates/` directory to another.
+
+With Pirus 2.0 and a simple INI file, that should exist in the same directory as
+the pirus script itself, like that :
+
+[source,ini]
+----
+[pirum]
+template = default
+templatedir = templates
+
+;[/path/to/your/pear/channel/server]
+;template = subfolder_of_templatedir
+;templatedir = /path/to/your/templates
+----
+You have the same behavior as Pirum 1.1.4
+
+This INI file is only a list of section, where each one define a single server
+and it's location (on your file system), and the theme (template) to apply.
+
+
+== Migrate from Pirum to Pirus
+
+[role="lead"]
+Only two easy steps are required.
+
+* *First*, write a simple INI content file like the one below
+and named it following the platform rules : `pirum.ini` (for windows users),
+and `.pirumrc` (for linux users). It must be located in the same directory
+as pirus executable.
+
+* *Second*, just use [label label-inverse]#pirus# command rather than [label label-inverse]#pirum#
+
+.Default Configuration File Pattern
+[source,ini]
+----
+[pirum]
+template = default
+templatedir = templates
+----
+
+
+== Add your first template
+
+[role="lead"]
+As Pirum, to get you started, you can copy and paste the default templates
+found in the `buildIndex()` and `buildCss()` methods. Or just copy the default theme
+in the `templates/default` directory of Pirus.
+
+Suppose your PEAR Channel Server is locate in `/var/pirum/servers/mypearchannel`,
+you've named it _mypearchannel_ and you named the theme _lightgreen_.
+
+Your configuration file should look like this one :
+
+[source,ini]
+----
+[pirum]
+template = default
+templatedir = templates
+
+[/var/pirum/servers/mypearchannel]
+template = lightgreen
+----
+
+In summary, your new file system structure will be :
+
+====
+----
+  +-- pirus
+  +-- templates/
+      +-- default/        <1>
+      |   +-- index.html
+      |   +-- pirum.css
+      +-- lightgreen/     <2>
+          +-- index.html
+          +-- pirum.css
+----
+====
+<1> The default theme of Pirum
+<2> You own templates html and stylesheet
+
+
+== Advanced usage
+
+[role="lead"]
+If you want to separate location of your different themes and servers, you can
+use another `templatedir` directive to do so.
+
+Split templates directory in two groups : distribution files and your own files
+
+[source,ini]
+----
+[pirum]
+template = 
+templatedir = templates
+
+[/var/pirum/servers/myfirstpearchannel]
+template = lightgreen
+templatedir = /var/pirum/templates
+
+[/var/pirum/servers/mysecondpearchannel]
+template = ocean
+templatedir = /var/pirum/templates
+----
+
+Your file system will look like :
+====
+----
+  /usr/local/php/pear/
+    +-- pirus
+        +-- templates/        <1>
+            +-- index.html
+            +-- pirum.css
+
+  /var/pirum/templates/
+    +-- lightgreen/           <2>
+    |   +-- index.html
+    |   +-- pirum.css
+    +-- ocean/                <3>
+        +-- index.html
+        +-- pirum.css
+----
+====
+<1> The default theme of Pirum
+<2> _lightgreen_ theme for your PEAR Channel Server
+<3> _ocean_ theme for your PEAR Channel Server
+
+
+== Examples
+
+The PEAR Bartlett Channel is the first one that use Pirus.
+
+image:images/bartlett_skin.png[title="Bartlett template"]
+
+http://bartlett.laurent-laville.org/
+
+`bartlett` template is based on the Pirum `default` template.
+
+image:images/default_skin.png[title="Default template"]
+
+http://pear.pirum-project.org/
