@@ -6,7 +6,7 @@ Pirus add ability to handle your own templates easily, with a sample configurati
 
 More information about Pirum can be found on the official [website](http://pirum.sensiolabs.org/).
 
-More information about Pirus can be found on the official [website](http://php5.laurent-laville.org/pirus/)
+More information about Pirus can be found on the official [website](http://php5.laurent-laville.org/pirus/manual/current/en/)
 
 About
 =====
