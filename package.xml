@@ -5,9 +5,8 @@
     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Pirus</name>
  <channel>bartlett.laurent-laville.org</channel>
- <summary>Pirus is the companion of Pirum to delegate the management of your templates.</summary>
- <description>Pirus will help you to select a theme for your PEAR Channel server, when you build it.
-Pirum provides only a basic theme that cannot be customized easily.
+ <summary>Pirus is equals to Pirum with UI themes.</summary>
+ <description>Pirus will help you to select a theme for your PEAR Channel Server, when you build it.
  </description>
  <lead>
   <name>Laurent Laville</name>
@@ -15,115 +14,43 @@ Pirum provides only a basic theme that cannot be customized easily.
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2012-12-12</date>
- <time>13:36:07</time>
+ <date>2013-01-09</date>
+ <time>16:04:20</time>
  <version>
-  <release>1.2.0</release>
-  <api>1.2.0</api>
+  <release>2.0.0</release>
+  <api>2.0.0</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
- <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+ <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
  <notes>
+Pirus 2.0 is no more, no less, than just Pirum with ability 
+to handle external templates, as much and where ever you want.
+
 Additions and changes:
-- all required resources used now the default autoloader (Pirus/Autoload.php)
-- provide a phar packages standalone version (embeded a Pirum and Console_CommandLine version)
-- Bartlett theme was removed from default distribution
+- Pirum GH-61: added an HTML id for each package on the main HTML page
 
 Bug fixes:
 - none
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
-   <dir name="docs">
-    <dir name="images">
-     <dir name="icons">
-      <dir name="callouts">
-       <file baseinstalldir="Bartlett" name="1.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="2.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="3.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="4.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="5.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="6.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="7.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="8.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="9.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="10.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="11.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="12.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="13.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="14.png" role="doc" />
-       <file baseinstalldir="Bartlett" name="15.png" role="doc" />
-      </dir> <!-- /docs/images/icons/callouts -->
-      <file baseinstalldir="Bartlett" name="caution.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="example.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="home.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="important.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="next.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="note.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="prev.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="README" role="doc" />
-      <file baseinstalldir="Bartlett" name="tip.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="up.png" role="doc" />
-      <file baseinstalldir="Bartlett" name="warning.png" role="doc" />
-     </dir> <!-- /docs/images/icons -->
-     <file baseinstalldir="Bartlett" name="bartlett_skin.png" role="doc" />
-     <file baseinstalldir="Bartlett" name="default_skin.png" role="doc" />
-     <file baseinstalldir="Bartlett" name="Pear.png" role="doc" />
-    </dir> <!-- /docs/images -->
-    <dir name="js">
-     <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
-     <file baseinstalldir="Bartlett" name="flask.js" role="doc" />
-    </dir> <!-- /docs/js -->
-    <dir name="styles">
-     <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
-     <file baseinstalldir="Bartlett" name="flask.css" role="doc" />
-     <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
-     <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
-    </dir> <!-- /docs/styles -->
-    <file baseinstalldir="Bartlett" name="attributes.txt" role="doc" />
-    <file baseinstalldir="Bartlett" name="build-phing.xml" role="doc" />
-    <file baseinstalldir="Bartlett" name="builddocs.xml" role="doc" />
-    <file baseinstalldir="Bartlett" name="CHANGELOG.txt" role="doc" />
-    <file baseinstalldir="Bartlett" name="growlPhing.png" role="doc" />
-    <file baseinstalldir="Bartlett" name="index.txt" role="doc" />
-    <file baseinstalldir="Bartlett" name="INSTALL.txt" role="doc" />
-    <file baseinstalldir="Bartlett" name="LICENSE.txt" role="doc" />
-    <file baseinstalldir="Bartlett" name="local.win.properties" role="doc" />
-    <file baseinstalldir="Bartlett" name="pirus-book.txt" role="doc" />
-    <file baseinstalldir="Bartlett" name="revision.txt" role="doc" />
-   </dir> <!-- /docs -->
-   <dir name="Pirus">
-    <file baseinstalldir="Bartlett" name="Autoload.php" role="php">
-     <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
-    </file>
-    <file baseinstalldir="Bartlett" name="CLI.php" role="php">
-     <tasks:replace from="@package_version@" to="version" type="package-info" />
-     <tasks:replace from="@cfg_dir@" to="cfg_dir" type="pear-config" />
-     <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
-    </file>
-   </dir> <!-- /Pirus -->
    <dir name="scripts">
-    <file baseinstalldir="" name="pirus" role="script">
-     <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
-     <tasks:unixeol />
-    </file>
+    <file baseinstalldir="" name="pirus" role="script" />
     <file baseinstalldir="" name="pirus.bat" role="script">
      <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
-     <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
      <tasks:windowseol />
     </file>
    </dir> <!-- /scripts -->
    <dir name="templates">
     <dir name="default">
-     <file baseinstalldir="Bartlett" name="index.html" role="data" />
-     <file baseinstalldir="Bartlett" name="pirum.css" role="data" />
+     <file baseinstalldir="" name="index.html" role="script" />
+     <file baseinstalldir="" name="pirum.css" role="script" />
     </dir> <!-- /templates/default -->
    </dir> <!-- /templates -->
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc" />
-   <file baseinstalldir="" name="pirus.ini.dist" role="cfg" />
    <file baseinstalldir="Bartlett" name="README.markdown" role="doc" />
   </dir> <!-- / -->
  </contents>
@@ -135,16 +62,24 @@ Bug fixes:
    <pearinstaller>
     <min>1.9.4</min>
    </pearinstaller>
-   <package>
-    <name>Console_CommandLine</name>
-    <channel>pear.php.net</channel>
-    <min>1.1.3</min>
-   </package>
-   <package>
-    <name>Pirum</name>
-    <channel>pear.pirum-project.org</channel>
-    <min>1.0.5</min>
-   </package>
+   <extension>
+    <name>date</name>
+   </extension>
+   <extension>
+    <name>json</name>
+   </extension>
+   <extension>
+    <name>pcre</name>
+   </extension>
+   <extension>
+    <name>zlib</name>
+   </extension>
+   <extension>
+    <name>SPL</name>
+   </extension>
+   <extension>
+    <name>SimpleXML</name>
+   </extension>
   </required>
  </dependencies>
  <phprelease>
@@ -165,6 +100,28 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.0.0</release>
+    <api>2.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-01-09</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+Pirus 2.0 is no more, no less, than just Pirum with ability 
+to handle external templates, as much and where ever you want.
+
+Additions and changes:
+- Pirum GH-61: added an HTML id for each package on the main HTML page
+
+Bug fixes:
+- none
+   </notes>
+  </release>
   <release>
    <version>
     <release>1.2.0</release>
