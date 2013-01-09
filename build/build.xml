@@ -45,7 +45,6 @@
     <property name="docs.pdf-paper-type"         value="us" />
     <property name="docs.fo-xsl"                 value="${docs.asciidoc.home}/docbook-xsl/fo-custom.xsl" />
     <property name="docs.build-dist"             value="true" />
-    <!-- <property name="docs.build-formats"          value="pdf" /> -->
     
     <fileset id="asciidoc-assets" dir="${project.dir}/docs">
         <include name="images**" />
