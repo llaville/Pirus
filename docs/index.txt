@@ -14,7 +14,8 @@ include::attributes.txt[]
 ************************************************************************
 Release highlights:
 
-- Pirus 2.0.0 come with a new API (and almost forked copy code of Pirum)
+- Pirus 2.0.1 fixed a dependencies issue that make packages impossible to install
+with remote commands.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the

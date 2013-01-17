@@ -14,8 +14,8 @@
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2013-01-09</date>
- <time>16:04:20</time>
+ <date>2013-01-17</date>
+ <time>14:51:53</time>
  <version>
   <release>2.0.0</release>
   <api>2.0.0</api>
@@ -26,14 +26,10 @@
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
  <notes>
-Pirus 2.0 is no more, no less, than just Pirum with ability 
-to handle external templates, as much and where ever you want.
-
 Additions and changes:
-- Pirum GH-61: added an HTML id for each package on the main HTML page
-
-Bug fixes:
 - none
+Bug fixes:
+- Pirum GH-64: Dependencies creation corrupted in Pirum_Package
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -109,17 +105,13 @@ Bug fixes:
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2013-01-09</date>
+   <date>2013-01-17</date>
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
    <notes>
-Pirus 2.0 is no more, no less, than just Pirum with ability 
-to handle external templates, as much and where ever you want.
-
 Additions and changes:
-- Pirum GH-61: added an HTML id for each package on the main HTML page
-
-Bug fixes:
 - none
+Bug fixes:
+- Pirum GH-64: Dependencies creation corrupted in Pirum_Package
    </notes>
   </release>
   <release>

@@ -35,7 +35,7 @@ $ php pirus
 That should give expected result:
 ====
 ----
-Pirum DEV by Fabien Potencier
+Pirum DEV by Fabien Potencier, Pirus by Laurent Laville
 Available commands:
   pirum build target_dir
   pirum add target_dir Pirum-1.0.0.tgz

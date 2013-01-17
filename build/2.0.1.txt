@@ -1,0 +1,5 @@
+Additions and changes:
+- none
+
+Bug fixes:
+- Pirum GH-64: Dependencies creation corrupted in Pirum_Package

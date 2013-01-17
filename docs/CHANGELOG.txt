@@ -2,11 +2,21 @@
 :description: Summary of versions changes
 include::attributes.txt[]
 
-
-== Version 2.0.0 _(2013-01-09)_
-
+[role="lead"]
 Pirus 2.0 is no more, no less, than just Pirum with ability
 to handle external templates, as much and where ever you want.
+
+
+== Version 2.0.1 _(2013-01-17)_
+
+.Additions and changes:
+* none
+
+.Bug fixes:
+* Pirum GH-64: Dependencies creation corrupted in Pirum_Package
+
+
+== Version 2.0.0 _(2013-01-09)_
 
 .Additions and changes:
 * Pirum GH-61: added an HTML id for each package on the main HTML page
