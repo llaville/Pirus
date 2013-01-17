@@ -15,9 +15,9 @@
   <active>yes</active>
  </lead>
  <date>2013-01-17</date>
- <time>14:51:53</time>
+ <time>15:35:56</time>
  <version>
-  <release>2.0.0</release>
+  <release>2.0.1</release>
   <api>2.0.0</api>
  </version>
  <stability>
@@ -28,6 +28,7 @@
  <notes>
 Additions and changes:
 - none
+
 Bug fixes:
 - Pirum GH-64: Dependencies creation corrupted in Pirum_Package
  </notes>
@@ -98,7 +99,7 @@ Bug fixes:
  <changelog>
   <release>
    <version>
-    <release>2.0.0</release>
+    <release>2.0.1</release>
     <api>2.0.0</api>
    </version>
    <stability>
@@ -110,83 +111,28 @@ Bug fixes:
    <notes>
 Additions and changes:
 - none
+
 Bug fixes:
 - Pirum GH-64: Dependencies creation corrupted in Pirum_Package
    </notes>
   </release>
   <release>
    <version>
-    <release>1.2.0</release>
-    <api>1.2.0</api>
+    <release>2.0.0</release>
+    <api>2.0.0</api>
    </version>
    <stability>
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-12-12</date>
-   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
+   <date>2013-01-09</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
    <notes>
-Additions and changes:
-- all required resources used now the default autoloader (Pirus/Autoload.php)
-- provide a phar packages standalone version (embeded a Pirum and Console_CommandLine version)
-- Bartlett theme was removed from default distribution
+Pirus 2.0 is no more, no less, than just Pirum with ability 
+to handle external templates, as much and where ever you want.
 
-Bug fixes:
-- none
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>1.1.1</release>
-    <api>1.1.1</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2012-07-26</date>
-   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
-   <notes>
 Additions and changes:
-- As Pirum 1.1.4 is not PHP 5.2 compatible, limit installation to version 1.0.5
-
-Bug fixes:
-- none
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>1.1.0</release>
-    <api>1.1.0</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2012-04-19</date>
-   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
-   <notes>
-Additions and changes:
-- add verbose mode to print theme name and directory used
-
-Bug fixes:
-- exit status is now returned
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>1.0.0</release>
-    <api>1.0.0</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2012-04-13</date>
-   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License</license>
-   <notes>
-Additions and changes:
-- initial version
+- Pirum GH-61: added an HTML id for each package on the main HTML page
 
 Bug fixes:
 - none
