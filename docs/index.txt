@@ -1,9 +1,9 @@
 = Pirus
-:description: The companion of Pirum to handle the themes of your PEAR Channel Server.
-:manhtml:     118Kb
+:description: Pirum what handle the themes of your PEAR Channel Server.
+:manhtml:     121Kb
 :manchunked:   80Kb
 :manchm:       77Kb
-:manpdfa4:     91Kb
+:manpdfa4:     93Kb
 :manpdfus:     93Kb
 :manepub:      75Kb
 include::revision.txt[]
@@ -14,8 +14,7 @@ include::attributes.txt[]
 ************************************************************************
 Release highlights:
 
-- Pirus 2.0.1 fixed a dependencies issue that make packages impossible to install
-with remote commands.
+- Pirus 2.0.2 fix a bug and add html documentation for offline reading.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -58,7 +57,7 @@ Read the full link:LICENSE.html[license].
 
 === Credits
 
-I would like to thanks here a guy without who this add-on won't be born.
+I would like to thanks here a guy without who Pirus won't be born.
 
 [quote, Fabien Potencier, http://pirum.sensiolabs.org/]
 ____

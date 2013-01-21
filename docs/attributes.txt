@@ -2,6 +2,9 @@
 :stylesdir:   styles
 :scriptsdir:  js
 :keywords:    PEAR, channel, package, template
-:mandir:      http://php5.laurent-laville.org/pirus/manual/current 
+:mandir:      http://php5.laurent-laville.org/pirus/manual/current
 :brand:       Pirus
+:brandref:    https://github.com/llaville/Pirus
 :sidebar:     right
+:footer:
+:navinfo1:

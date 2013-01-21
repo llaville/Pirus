@@ -1,0 +1,6 @@
+Additions and changes:
+- bundle the html documentation for offline reading
+- remove README.markdown github landing page from distribution
+
+Bug fixes:
+- Pirum GH-65: Dupplicate entries in rest/m/allmaintainers.xml

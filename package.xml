@@ -14,10 +14,10 @@
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2013-01-17</date>
- <time>15:35:56</time>
+ <date>2013-01-21</date>
+ <time>16:44:49</time>
  <version>
-  <release>2.0.1</release>
+  <release>2.0.2</release>
   <api>2.0.0</api>
  </version>
  <stability>
@@ -27,13 +27,48 @@
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
  <notes>
 Additions and changes:
-- none
+- bundle the html documentation for offline reading
+- remove README.markdown github landing page from distribution
 
 Bug fixes:
-- Pirum GH-64: Dependencies creation corrupted in Pirum_Package
+- Pirum GH-65: Dupplicate entries in rest/m/allmaintainers.xml
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
+   <dir name="html">
+    <dir name="images">
+     <dir name="icons">
+      <file baseinstalldir="Bartlett" name="caution.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="example.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="home.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="important.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="next.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="note.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="prev.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="README" role="doc" />
+      <file baseinstalldir="Bartlett" name="tip.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="up.png" role="doc" />
+      <file baseinstalldir="Bartlett" name="warning.png" role="doc" />
+     </dir> <!-- /html/images/icons -->
+     <file baseinstalldir="Bartlett" name="bartlett_skin.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="default_skin.png" role="doc" />
+     <file baseinstalldir="Bartlett" name="Pear.png" role="doc" />
+    </dir> <!-- /html/images -->
+    <dir name="js">
+     <file baseinstalldir="Bartlett" name="asciidoc.js" role="doc" />
+    </dir> <!-- /html/js -->
+    <dir name="styles">
+     <file baseinstalldir="Bartlett" name="asciidoc.css" role="doc" />
+     <file baseinstalldir="Bartlett" name="pygments.css" role="doc" />
+     <file baseinstalldir="Bartlett" name="toc2.css" role="doc" />
+    </dir> <!-- /html/styles -->
+    <file baseinstalldir="Bartlett" name="CHANGELOG.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="getting-started.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="index.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="INSTALL.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="LICENSE.html" role="doc" />
+    <file baseinstalldir="Bartlett" name="pirus-book.html" role="doc" />
+   </dir> <!-- /html -->
    <dir name="scripts">
     <file baseinstalldir="" name="pirus" role="script" />
     <file baseinstalldir="" name="pirus.bat" role="script">
@@ -48,7 +83,6 @@ Bug fixes:
     </dir> <!-- /templates/default -->
    </dir> <!-- /templates -->
    <file baseinstalldir="Bartlett" name="LICENSE" role="doc" />
-   <file baseinstalldir="Bartlett" name="README.markdown" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -97,6 +131,26 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.0.2</release>
+    <api>2.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-01-21</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+Additions and changes:
+- bundle the html documentation for offline reading
+- remove README.markdown github landing page from distribution
+
+Bug fixes:
+- Pirum GH-65: Dupplicate entries in rest/m/allmaintainers.xml
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.0.1</release>
