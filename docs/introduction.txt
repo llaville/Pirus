@@ -1,10 +1,10 @@
 [role="lead"]
 Pirus is the best companion of
-link:http://pirum.sensiolabs.org/[Pirum] to handle all themes of your PEAR Channels.
+http://pirum.sensiolabs.org/[Pirum] to handle all themes of your PEAR Channels.
 
 While Pirum allow only to handle one customization of your `index.html` and `pirum.css` files,
 Pirus extends this limit to infinity.
 
 === Requirements
 
-* link:http://www.php.net[PHP] 5.2.1 or better
+* http://www.php.net[PHP] 5.2.1 or better
