@@ -14,10 +14,10 @@
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2013-01-21</date>
- <time>16:44:49</time>
+ <date>2013-05-08</date>
+ <time>19:59:59</time>
  <version>
-  <release>2.0.2</release>
+  <release>2.1.0</release>
   <api>2.0.0</api>
  </version>
  <stability>
@@ -27,11 +27,13 @@
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
  <notes>
 Additions and changes:
-- bundle the html documentation for offline reading
-- remove README.markdown github landing page from distribution
+- Pirum GH-67: Add description to feed
+- Pirum GH-69: Link license to URL
+- Pirum GH-72: Group dependencies by channel
 
 Bug fixes:
-- Pirum GH-65: Dupplicate entries in rest/m/allmaintainers.xml
+- Pirum GH-70: Fix adding multiple dependencies
+- Pirum GH-71: Catch errors when opening the archive
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -131,6 +133,28 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.1.0</release>
+    <api>2.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-05-08</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+Additions and changes:
+- Pirum GH-67: Add description to feed
+- Pirum GH-69: Link license to URL
+- Pirum GH-72: Group dependencies by channel
+
+Bug fixes:
+- Pirum GH-70: Fix adding multiple dependencies
+- Pirum GH-71: Catch errors when opening the archive
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.0.2</release>
