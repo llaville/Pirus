@@ -1,0 +1,8 @@
+Additions and changes:
+- Pirum GH-67: Add description to feed
+- Pirum GH-69: Link license to URL
+- Pirum GH-72: Group dependencies by channel
+
+Bug fixes:
+- Pirum GH-70: Fix adding multiple dependencies
+- Pirum GH-71: Catch errors when opening the archive

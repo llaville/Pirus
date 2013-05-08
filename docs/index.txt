@@ -1,11 +1,5 @@
 = Pirus
 :description: Pirum what handle the themes of your PEAR Channel Server.
-:manhtml:     121Kb
-:manchunked:   80Kb
-:manchm:       77Kb
-:manpdfa4:     93Kb
-:manpdfus:     93Kb
-:manepub:      75Kb
 include::revision.txt[]
 include::attributes.txt[]
 
@@ -14,7 +8,7 @@ include::attributes.txt[]
 ************************************************************************
 Release highlights:
 
-- Pirus 2.0.2 fix a bug and add html documentation for offline reading.
+- Pirus 2.1.0 synchronized with Pirum 1.1.5 new features and bug fixes.
 
 Read the link:CHANGELOG.html[CHANGELOG] for a full list of all
 additions, changes and bug fixes. Changes are documented in the
@@ -40,7 +34,7 @@ You can download the documentation for offline reading.
 [options="header", role="table table-bordered"]
 |===========================
 | Language | Single HTML file | Many HTML files | HTML Help file | PDF A4 file | PDF US file | EPUB file
-| English | link:{mandir}/en/pirus-book.html.zip[pirus-book.html.zip] {manhtml} | link:{mandir}/en/pirus-book.chunked.zip[pirus-book.chunked.zip] {manchunked} | link:{mandir}/en/pirus-book.chm.zip[pirus-book.chm.zip] {manchm} | link:{mandir}/en/pirus-book-a4.pdf[pirus-book-a4.pdf] {manpdfa4} | link:{mandir}/en/pirus-book-us.pdf[pirus-book-us.pdf] {manpdfus} | link:{mandir}/en/pirus-book.epub.zip[pirus-book.epub.zip] {manepub}
+| English | link:{mandir}/en/pirus-book.html.zip[pirus-book.html.zip] | link:{mandir}/en/pirus-book.chunked.zip[pirus-book.chunked.zip] | link:{mandir}/en/pirus-book.chm.zip[pirus-book.chm.zip] | link:{mandir}/en/pirus-book-a4.pdf[pirus-book-a4.pdf] | link:{mandir}/en/pirus-book-us.pdf[pirus-book-us.pdf] | link:{mandir}/en/pirus-book.epub.zip[pirus-book.epub.zip]
 |===========================
 
 == Appendixes
@@ -67,7 +61,7 @@ ____
 === Links
 
 All pages of this site, and user guide were generated with AsciiDoc 8.6.8,
-assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.4.14
+assisted by FOP 1.0 (for PDFs). Automated build process uses Phing 2.5.0
 
 Convert the HTML Help source (.hhp and .html) files to HTML Help (.chm) files
 using the Microsoft HTML Help Compiler.

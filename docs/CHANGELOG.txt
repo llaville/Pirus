@@ -7,6 +7,18 @@ Pirus 2.0 is no more, no less, than just Pirum with ability
 to handle external templates, as much and where ever you want.
 
 
+== Version 2.1.0 _(2013-05-08)_
+
+.Additions and changes:
+* Pirum GH-67: Add description to feed
+* Pirum GH-69: Link license to URL
+* Pirum GH-72: Group dependencies by channel
+
+.Bug fixes:
+* Pirum GH-70: Fix adding multiple dependencies
+* Pirum GH-71: Catch errors when opening the archive
+
+
 == Version 2.0.2 _(2013-01-21)_
 
 .Additions and changes:
