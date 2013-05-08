@@ -402,6 +402,7 @@ class Pirum_Builder
         </author>
         <updated>$date</updated>
         <content>
+            {$package['description']}
             {$release['notes']}
         </content>
     </entry>
