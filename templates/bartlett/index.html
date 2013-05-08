@@ -51,7 +51,7 @@ pear install <?php echo $this->server->alias ?>/package_name-beta</code></pre>
                     <h3 id="<?php echo strtolower($package['name']) ?>"><?php echo $package['name'] ?><small> - <?php echo $package['summary'] ?></small></h3>
                     <p><?php echo $package['description'] ?></p>
                     <dl>
-                        <dt>License :</dt><dd><?php echo $package['license'] ?></dd>
+                        <dt>License :</dt><dd><?php echo (empty($package['licenseuri']) ? $package['license'] : '<a href="' . $package['licenseuri'] . '">' . $package['license'] . '</a>') ?></dd>
                         <?php 
                             $deps = array();
                             if (isset($package['deps']['required']['package'])) {
