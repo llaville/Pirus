@@ -1411,7 +1411,7 @@ class Pirum_Package
         $this->name    = $match['name'];
         $this->version = $match['version'];
 
-        $this->tmpDir = sys_get_temp_dir().'/pirum_package_'.uniqid();
+        $this->tmpDir = sys_get_temp_dir().DIRECTORY_SEPARATOR.uniqid('pirum_package_',true);
 
         mkdir($this->tmpDir, 0777, true);
     }
