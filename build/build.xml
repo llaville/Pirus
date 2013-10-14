@@ -244,6 +244,13 @@
     </target>
     <target name="package" depends="package.all" />
     <target name="server"  depends="server.all" />
+    <target name="web">
+        <phingcall target="docs.make-web">
+            <property name="docs.asciidoc.target" value="/var/pirus/manual/current/en" />
+            <property name="docs.theme-asciidoc" value="bsdocs" />
+            <property name="docs.backend-asciidoc" value="bootstrap" />
+        </phingcall>
+    </target>
 
     <target name="all"     depends="docs.all,package.all,server.all" />
 
