@@ -14,10 +14,10 @@
   <email>pear@laurent-laville.org</email>
   <active>yes</active>
  </lead>
- <date>2013-05-08</date>
- <time>19:59:59</time>
+ <date>2013-10-14</date>
+ <time>18:02:22</time>
  <version>
-  <release>2.1.0</release>
+  <release>2.1.1</release>
   <api>2.0.0</api>
  </version>
  <stability>
@@ -27,13 +27,10 @@
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
  <notes>
 Additions and changes:
-- Pirum GH-67: Add description to feed
-- Pirum GH-69: Link license to URL
-- Pirum GH-72: Group dependencies by channel
+- none
 
 Bug fixes:
-- Pirum GH-70: Fix adding multiple dependencies
-- Pirum GH-71: Catch errors when opening the archive
+- Pirum GH-74: Sometimes cannot create temporary folder
  </notes>
  <contents>
   <dir baseinstalldir="Bartlett" name="/">
@@ -133,6 +130,25 @@ Bug fixes:
   </filelist>
  </phprelease>
  <changelog>
+  <release>
+   <version>
+    <release>2.1.1</release>
+    <api>2.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-10-14</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+Additions and changes:
+- none
+
+Bug fixes:
+- Pirum GH-74: Sometimes cannot create temporary folder
+   </notes>
+  </release>
   <release>
    <version>
     <release>2.1.0</release>
