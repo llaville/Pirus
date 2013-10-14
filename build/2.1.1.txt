@@ -1,0 +1,5 @@
+Additions and changes:
+- none
+
+Bug fixes:
+- Pirum GH-74: Sometimes cannot create temporary folder

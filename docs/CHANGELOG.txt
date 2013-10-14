@@ -7,6 +7,15 @@ Pirus 2.0 is no more, no less, than just Pirum with ability
 to handle external templates, as much and where ever you want.
 
 
+== Version 2.1.1 _(2013-10-14)_
+
+.Additions and changes:
+* none
+
+.Bug fixes:
+* Pirum GH-74: Sometimes cannot create temporary folder
+
+
 == Version 2.1.0 _(2013-05-08)_
 
 .Additions and changes:
